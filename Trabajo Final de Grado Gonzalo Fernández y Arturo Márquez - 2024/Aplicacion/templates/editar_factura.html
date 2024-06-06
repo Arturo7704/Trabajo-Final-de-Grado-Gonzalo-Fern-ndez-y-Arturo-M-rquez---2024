@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Factura</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .home-button {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .home-button:hover {
+            background-color: #45a049;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 768px) {
+            form {
+                padding: 15px;
+            }
+            input[type="text"], input[type="number"], input[type="date"] {
+                margin-bottom: 15px;
+            }
+            button {
+                padding: 12px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="home-button">Inicio</a>
+        <h1>Editar Factura</h1>
+        <form method="post">
+            <label for="producto">Producto:</label>
+            <input type="text" id="producto" name="producto" value="{{ data[1] }}"><br>
+    
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" name="cliente" value="{{ data[2] }}"><br>
+    
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais" value="{{ data[3] }}"><br>
+    
+            <label for="id_factura">ID Factura:</label>
+            <input type="text" id="id_factura" name="id_factura" value="{{ data[4] }}"><br>
+    
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" value="{{ data[5] }}" min="0" step="1"><br>
+    
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" value="{{ data[6] }}"><br>
+    
+            <button type="submit">Guardar cambios</button>
+        </form>
+    </div>
+</body>
+</html>

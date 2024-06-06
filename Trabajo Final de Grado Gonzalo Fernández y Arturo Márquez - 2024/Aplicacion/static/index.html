@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso a la herramienta</title>
+    <style>
+        /* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* Estilos del encabezado */
+header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 100;
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: flex-start; /* Alinea los elementos al inicio */
+    margin: 0 auto;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+     /* Mueve el logo totalmente a la izquierda */
+}
+.slogan {
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 60% ;
+}
+
+/* Estilos de la sección principal (hero section) */
+.hero-section {
+    position: relative;
+    height: 100vh; /* Altura de la ventana del navegador */
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    padding: 20px; /* Espaciado alrededor de los elementos */
+}
+
+.welcome-text {
+    font-size: 2rem;
+    color: #ffffff; /* Color de texto blanco */
+    margin-bottom: 20px; /* Espacio inferior */
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Empuja el botón hacia la derecha */
+    margin-left: auto; /* Ajusta la posición del botón */
+    margin-right: 100px; /* Alinea el botón a la derecha */
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn-login {
+    background-color: #007aff; /* Color azul Apple */
+    color: #fff; /* Texto blanco */
+    padding: 15px 30px; /* Espaciado interior */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Borde redondeado */
+    font-size: 1rem; /* Tamaño de fuente */
+    font-weight: bold; /* Fuente en negrita */
+    cursor: pointer; /* Cambia el cursor a mano */
+    transition: all 0.3s; /* Transición suave */
+}
+
+#btn-login:hover {
+    background-color: #0056d2; /* Color más oscuro al pasar el mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+    transform: scale(1.1); /* Amplía el botón al 110% */
+}
+
+/* Estilos de la sección de contenido */
+.content-section {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+            <h1 class="logo">AG</h1>
+            <p class="slogan">"Accede a una poderosa herramienta"</p>
+       
+    </header>
+
+    <section class="hero-section">
+        <img src="https://www.newmedicaleconomics.es/wp-content/uploads/2023/09/concepto-medico-inteligencia-artificial-medicina-ia-diagnostico-asistido-ia-scaled.jpg" alt="Imagen de fondo" class="hero-img">
+        <div class="overlay">
+            <div class="button-container">
+                <h1 class="welcome-text">Bienvenido</h1>
+                <button id="btn-login" onclick="window.location.href='inicio.html'">Acceso a la herramienta</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>Acerca de la herramienta</h2>
+            <p>Esta es una herramienta para las empresas diseñada para interactuar de manera eficiente con su base de datos. Proporciona un acceso fácil e intuitivo tanto para administradores como para usuarios.</p>
+            <h3>Funciones para usuarios</h3>
+            <p>Los usuarios pueden beneficiarse de una inteligencia artificial (IA) que les asiste en la búsqueda de información en la base de datos. Esto facilita el acceso rápido a los datos relevantes y mejora la experiencia del usuario.</p>
+            <h3>Funciones para administradores</h3>
+            <p>Los administradores tienen acceso a un CRUD (Crear, Leer, Actualizar, Eliminar) que les permite gestionar los datos de forma eficaz. Esto les da control total sobre la base de datos, garantizando su seguridad y confiabilidad.</p>
+            <h3>Ventajas</h3>
+            <ul>
+                <li>Interfaz fácil de usar para todos los niveles de experiencia.</li>
+                <li>Mejora la eficiencia y la productividad de las empresas.</li>
+                <li>Proporciona herramientas avanzadas para la gestión de datos.</li>
+                <li>Ofrece un soporte excepcional y actualizaciones regulares.</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="static/script.js"></script>
+</body>
+
+</html>

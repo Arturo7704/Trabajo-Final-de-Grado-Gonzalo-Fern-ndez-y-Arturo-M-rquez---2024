@@ -1,0 +1,26 @@
+select * from factura_ventas;
+select * from ventas;
+
+
+INSERT INTO factura_ventas (id_factura, id_venta)
+SELECT
+  f.id_factura,
+  v.id_venta
+FROM
+  (SELECT id_factura, ROW_NUMBER() OVER (ORDER BY id_factura) AS rn FROM factura) f
+JOIN
+  (SELECT id_venta, ROW_NUMBER() OVER (ORDER BY RANDOM()) AS rn FROM ventas WHERE id_factura IS NULL) v
+ON f.rn = v.rn;
+
+-- Actualizar la tabla ventas con el id_factura asociado
+UPDATE ventas
+SET id_factura = (
+  SELECT fv.id_factura
+  FROM factura_ventas fv
+  WHERE fv.id_venta = ventas.id_venta
+)
+WHERE id_factura IS NULL
+AND id_venta IN (
+  SELECT id_venta
+  FROM factura_ventas
+);

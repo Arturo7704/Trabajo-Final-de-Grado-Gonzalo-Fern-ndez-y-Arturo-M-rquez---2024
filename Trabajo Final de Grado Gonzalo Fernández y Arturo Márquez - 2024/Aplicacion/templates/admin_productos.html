@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Productos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .home-button, .add-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .home-button:hover, .add-button:hover {
+            background-color: #45a049;
+        }
+        #search-form {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #search-form label {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        #search-form input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #search-form button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        #search-form button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .pagination a {
+            color: #4CAF50;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: 1px solid #4CAF50;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        .pagination a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .pagination strong {
+            padding: 10px 20px;
+            border: 1px solid #4CAF50;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .button-container a {
+                margin: 10px 0;
+            }
+            #search-form {
+                flex-direction: column;
+            }
+            #search-form label, #search-form button {
+                margin: 10px 0;
+            }
+            #search-form input[type="text"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a href="/" class="home-button">Inicio</a>
+        <a href="/crear" class="add-button">Añadir Nuevo Dato</a>
+    </div>
+    <h1>BASE DE DATOS</h1>
+    <form id="search-form" method="get" action="{{ url_for('admin') }}">
+        <label for="search_query">Buscar:</label>
+        <input type="text" id="search_query" name="q" value="{{ search_query }}" placeholder="Producto, Cliente, País, Fecha, ID Factura">
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <table id="results-table">
+        <thead>
+            <tr>
+                {% for column in columns %}
+                <th>{{ column }}</th>
+                {% endfor %}
+                <th colspan="2">Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                {% for value in row %}
+                <td>{{ value }}</td>
+                {% endfor %}
+                <td>
+                    <form action="/eliminar_factura/{{ row[0] }}" method="post">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/editar_factura/{{ row[0] }}" method="get">
+                        <button type="submit">Editar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        {% if page > 1 %}
+            <a href="{{ url_for('admin', page=page-1, q=search_query) }}">Anterior</a>
+        {% endif %}
+        
+        {% for p in range(1, total_pages + 1) %}
+            {% if p == page %}
+                <strong>{{ p }}</strong>
+            {% else %}
+                <a href="{{ url_for('admin', page=p, q=search_query) }}">{{ p }}</a>
+            {% endif %}
+        {% endfor %}
+        
+        {% if page < total_pages %}
+            <a href="{{ url_for('admin', page=page+1, q=search_query) }}">Siguiente</a>
+        {% endif %}
+    </div>
+
+    <script>
+        document.getElementById('search_query').addEventListener('input', function() {
+            var form = document.getElementById('search-form');
+            var formData = new FormData(form);
+            fetch(form.action, {
+                method: 'GET',
+                body: new URLSearchParams(formData)
+            })
+            .then(response => response.text())
+            .then(data => {
+                var parser = new DOMParser();
+                var htmlDocument = parser.parseFromString(data, 'text/html');
+                var newTable = htmlDocument.getElementById('results-table');
+                var currentTable = document.getElementById('results-table');
+                currentTable.parentNode.replaceChild(newTable, currentTable);
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

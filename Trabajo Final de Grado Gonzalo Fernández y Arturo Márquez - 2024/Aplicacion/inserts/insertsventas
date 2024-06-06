@@ -1,0 +1,28 @@
+-- Habilitar la generación de números aleatorios
+SELECT random();
+
+-- Insertar 200 ventas aleatorias
+WITH ventas_aleatorias AS (
+  SELECT
+    (ABS(RANDOM()) % (SELECT COUNT(*) FROM clientes)) + 1 AS id_cliente,
+    (ABS(RANDOM()) % (SELECT COUNT(*) FROM productos)) + 1 AS id_producto,
+    (ABS(RANDOM()) % (SELECT COUNT(*) FROM paises)) + 1 AS id_pais,
+    (ABS(RANDOM()) % 10) + 1 AS cantidad,
+    strftime('%Y-%m-%d', datetime('now', '-' || (ABS(RANDOM()) % 365) || ' days')) AS fecha
+  FROM
+    sqlite_master
+  LIMIT
+    200
+)
+
+INSERT INTO ventas (id_cliente, id_producto, id_pais, cantidad, fecha)
+SELECT
+  va.id_cliente,
+  va.id_producto,
+  va.id_pais,
+  va.cantidad,
+  va.fecha
+FROM
+  ventas_aleatorias va;
+  
+select * from ventas;

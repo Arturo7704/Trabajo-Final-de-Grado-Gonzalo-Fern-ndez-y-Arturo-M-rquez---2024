@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de productos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        .show-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .show-button:hover {
+            background-color: #45a049;
+        }
+        #search-form {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #search-form label {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        #search-form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        #search-form input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #search-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .resultado {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .resultado h2 {
+            color: #333;
+        }
+        .resultado p {
+            margin-bottom: 10px;
+        }
+        .resultado strong {
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .button-container {
+                justify-content: center;
+            }
+            .button-container .show-button {
+                margin: 10px 0;
+            }
+            #search-form {
+                flex-direction: column;
+            }
+            #search-form label, #search-form input[type="submit"] {
+                margin: 10px 0;
+            }
+            #search-form input[type="text"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <form action="/admin_productos" method="get">
+            <button type="submit" class="show-button">Mostrar Productos</button>
+        </form>
+    </div>
+    <h1>Consulta de datos</h1>
+    <form id="search-form" action="/consulta" method="post">
+        <label for="pregunta">Haz tu pregunta:</label>
+        <input type="text" id="pregunta" name="pregunta">
+        <input type="submit" value="Consultar" class="submit-button">
+    </form>
+
+    {% if resultado %}
+    <div class="resultado">
+        <h2>Resultado de la consulta</h2>
+        <p><strong>Pregunta:</strong> {{ pregunta }}</p>
+        <p><strong>Resultado:</strong> {{ resultado }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>

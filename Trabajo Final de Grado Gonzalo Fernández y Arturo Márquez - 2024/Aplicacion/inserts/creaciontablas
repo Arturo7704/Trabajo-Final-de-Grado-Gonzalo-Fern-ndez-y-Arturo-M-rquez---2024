@@ -1,0 +1,46 @@
+-- Crear la tabla productos
+CREATE TABLE productos (
+    id_producto INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL
+);
+
+-- Crear la tabla clientes
+CREATE TABLE clientes (
+    id_cliente INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL
+);
+
+-- Crear la tabla paises
+CREATE TABLE paises (
+    id_pais INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL
+);
+
+-- Crear la tabla ventas
+CREATE TABLE ventas (
+    id_venta INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_producto INTEGER NOT NULL,
+    id_cliente INTEGER NOT NULL,
+    id_pais INTEGER NOT NULL,
+    id_factura INTEGER,
+    cantidad INTEGER NOT NULL,
+    fecha DATE NOT NULL,
+    FOREIGN KEY (id_producto) REFERENCES productos(id_producto),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_pais) REFERENCES paises(id_pais),
+    FOREIGN KEY (id_factura) REFERENCES factura(id_factura)
+);
+
+-- Crear la tabla factura
+CREATE TABLE factura (
+    id_factura INTEGER PRIMARY KEY AUTOINCREMENT
+);
+
+-- Crear la tabla intermedia factura_ventas
+CREATE TABLE factura_ventas (
+    id_factura INTEGER NOT NULL,
+    id_venta INTEGER NOT NULL,
+    PRIMARY KEY (id_factura, id_venta),
+    FOREIGN KEY (id_factura) REFERENCES factura(id_factura),
+    FOREIGN KEY (id_venta) REFERENCES ventas(id_venta)
+);

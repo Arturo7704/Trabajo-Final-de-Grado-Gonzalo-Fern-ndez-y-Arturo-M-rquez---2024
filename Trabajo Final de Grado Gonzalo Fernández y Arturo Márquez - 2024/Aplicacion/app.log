@@ -1,0 +1,100 @@
+2024-06-02 22:41:48,261 - WARNING -  * Debugger is active!
+2024-06-02 22:41:48,262 - INFO -  * Debugger PIN: 342-570-376
+2024-06-02 22:42:22,114 - INFO - Se ha accedido a la página de inicio
+2024-06-02 22:42:22,120 - INFO - 192.168.57.1 - - [02/Jun/2024 22:42:22] "[36mGET / HTTP/1.1[0m" 304 -
+2024-06-02 22:42:22,135 - INFO - 192.168.57.1 - - [02/Jun/2024 22:42:22] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2024-06-02 22:42:49,197 - INFO - 192.168.57.1 - - [02/Jun/2024 22:42:49] "[33mGET /inicio.html HTTP/1.1[0m" 404 -
+2024-06-02 22:42:49,200 - INFO - Se ha ejecutado el script curl.sh
+2024-06-02 22:42:49,201 - INFO - 192.168.57.1 - - [02/Jun/2024 22:42:49] "GET /curl.sh HTTP/1.1" 200 -
+2024-06-02 22:45:34,969 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-02 22:45:35,182 - WARNING -  * Debugger is active!
+2024-06-02 22:45:35,182 - INFO -  * Debugger PIN: 342-570-376
+2024-06-02 22:45:35,782 - INFO - Conexión a la base de datos exitosa.
+2024-06-02 22:45:35,877 - INFO - Modelo de lenguaje creado.
+2024-06-02 22:45:35,903 - INFO - Cadena de lenguaje creada.
+2024-06-02 22:45:35,906 - WARNING -  * Debugger is active!
+2024-06-02 22:45:35,907 - INFO -  * Debugger PIN: 880-784-073
+2024-06-02 22:46:13,024 - INFO - 192.168.57.1 - - [02/Jun/2024 22:46:13] "GET / HTTP/1.1" 200 -
+2024-06-02 22:46:46,757 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-02 22:46:47,071 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-02 22:46:47,356 - WARNING -  * Debugger is active!
+2024-06-02 22:46:47,357 - INFO -  * Debugger PIN: 342-570-376
+2024-06-02 22:47:37,795 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-02 22:47:38,127 - WARNING -  * Debugger is active!
+2024-06-02 22:47:38,127 - INFO -  * Debugger PIN: 342-570-376
+2024-06-02 22:48:57,342 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-02 22:48:57,651 - WARNING -  * Debugger is active!
+2024-06-02 22:48:57,652 - INFO -  * Debugger PIN: 342-570-376
+2024-06-02 22:51:53,279 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-02 22:51:53,633 - WARNING -  * Debugger is active!
+2024-06-02 22:51:53,633 - INFO -  * Debugger PIN: 342-570-376
+2024-06-02 22:51:55,082 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-02 22:51:55,262 - WARNING -  * Debugger is active!
+2024-06-02 22:51:55,263 - INFO -  * Debugger PIN: 342-570-376
+2024-06-03 21:38:56,475 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.57.129:5000
+2024-06-03 21:38:56,478 - INFO - [33mPress CTRL+C to quit[0m
+2024-06-03 21:38:56,481 - INFO -  * Restarting with stat
+2024-06-03 21:38:57,326 - WARNING -  * Debugger is active!
+2024-06-03 21:38:57,484 - INFO -  * Debugger PIN: 991-304-344
+2024-06-03 22:24:16,254 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-03 22:24:16,333 - INFO -  * Restarting with stat
+2024-06-03 22:24:16,662 - WARNING -  * Debugger is active!
+2024-06-03 22:24:16,664 - INFO -  * Debugger PIN: 991-304-344
+2024-06-03 22:26:03,344 - INFO - Se ha accedido a la página de inicio
+2024-06-03 22:26:03,353 - INFO - 192.168.57.1 - - [03/Jun/2024 22:26:03] "[36mGET / HTTP/1.1[0m" 304 -
+2024-06-03 22:26:03,371 - INFO - 192.168.57.1 - - [03/Jun/2024 22:26:03] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2024-06-03 22:26:03,519 - INFO - 192.168.57.1 - - [03/Jun/2024 22:26:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-03 22:26:28,167 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-03 22:26:28,198 - INFO -  * Restarting with stat
+2024-06-03 22:26:28,331 - WARNING -  * Debugger is active!
+2024-06-03 22:26:28,331 - INFO -  * Debugger PIN: 991-304-344
+2024-06-03 22:32:30,488 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.57.129:5000
+2024-06-03 22:32:30,496 - INFO - [33mPress CTRL+C to quit[0m
+2024-06-03 22:32:30,498 - INFO -  * Restarting with stat
+2024-06-03 22:32:31,759 - WARNING -  * Debugger is active!
+2024-06-03 22:32:32,098 - INFO -  * Debugger PIN: 143-116-191
+2024-06-03 23:16:54,551 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.57.129:5000
+2024-06-03 23:16:54,554 - INFO - [33mPress CTRL+C to quit[0m
+2024-06-03 23:16:54,556 - INFO -  * Restarting with stat
+2024-06-03 23:16:56,206 - WARNING -  * Debugger is active!
+2024-06-03 23:16:56,598 - INFO -  * Debugger PIN: 733-498-523
+2024-06-03 23:17:02,813 - INFO - Se ha accedido a la página de inicio
+2024-06-03 23:17:02,849 - INFO - 192.168.57.1 - - [03/Jun/2024 23:17:02] "[36mGET / HTTP/1.1[0m" 304 -
+2024-06-03 23:17:02,872 - INFO - 192.168.57.1 - - [03/Jun/2024 23:17:02] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+2024-06-03 23:27:04,566 - INFO - Se ha ejecutado el script curl.sh
+2024-06-03 23:27:04,569 - INFO - 192.168.57.1 - - [03/Jun/2024 23:27:04] "GET /curl.sh HTTP/1.1" 200 -
+2024-06-03 23:27:44,862 - INFO - 192.168.57.1 - - [03/Jun/2024 23:27:44] "[33mGET /inicio.html HTTP/1.1[0m" 404 -
+2024-06-03 23:27:44,864 - INFO - Se ha ejecutado el script curl.sh
+2024-06-03 23:27:44,865 - INFO - 192.168.57.1 - - [03/Jun/2024 23:27:44] "GET /curl.sh HTTP/1.1" 200 -
+2024-06-05 21:59:29,985 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.57.129:5000
+2024-06-05 21:59:29,997 - INFO - [33mPress CTRL+C to quit[0m
+2024-06-05 21:59:30,018 - INFO -  * Restarting with stat
+2024-06-05 21:59:31,861 - WARNING -  * Debugger is active!
+2024-06-05 21:59:32,179 - INFO -  * Debugger PIN: 130-455-214
+2024-06-05 22:25:13,841 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-05 22:25:14,822 - INFO -  * Restarting with stat
+2024-06-05 22:25:15,146 - WARNING -  * Debugger is active!
+2024-06-05 22:25:15,147 - INFO -  * Debugger PIN: 130-455-214
+2024-06-05 22:28:17,447 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-05 22:28:17,490 - INFO -  * Restarting with stat
+2024-06-05 22:28:17,687 - WARNING -  * Debugger is active!
+2024-06-05 22:28:17,687 - INFO -  * Debugger PIN: 130-455-214
+2024-06-05 22:29:17,313 - INFO - 192.168.57.129 - - [05/Jun/2024 22:29:17] "[33mGET /hola.py HTTP/1.1[0m" 404 -
+2024-06-05 23:02:31,586 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-05 23:02:31,626 - INFO -  * Restarting with stat
+2024-06-05 23:02:31,826 - WARNING -  * Debugger is active!
+2024-06-05 23:02:31,827 - INFO -  * Debugger PIN: 130-455-214
+2024-06-05 23:02:43,823 - INFO -  * Detected change in '/home/gonzalo/Desktop/Aplicacion/usuarios.py', reloading
+2024-06-05 23:02:43,867 - INFO -  * Restarting with stat
+2024-06-05 23:02:44,077 - WARNING -  * Debugger is active!
+2024-06-05 23:02:44,077 - INFO -  * Debugger PIN: 130-455-214
+2024-06-06 21:44:02,728 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.57.129:5000
+2024-06-06 21:44:02,735 - INFO - [33mPress CTRL+C to quit[0m
+2024-06-06 21:44:02,743 - INFO -  * Restarting with stat
+2024-06-06 21:44:05,634 - WARNING -  * Debugger is active!
+2024-06-06 21:44:06,092 - INFO -  * Debugger PIN: 257-172-304
